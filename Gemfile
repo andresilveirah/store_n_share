@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.3.4'
 gem 'simple_form'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.3'

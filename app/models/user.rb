@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          
   validates_presence_of :name, if: :confirmed?
@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def password_match?
+    self.errors[:name] << "can't be blank" if name.blank?
     self.errors[:password] << "can't be blank" if password.blank?
     self.errors[:password_confirmation] << "can't be blank" if password_confirmation.blank?
     self.errors[:password_confirmation] << "does not match password" if password != password_confirmation

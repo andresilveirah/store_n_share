@@ -2,7 +2,8 @@
 <%= simple_form_for(resource, :as => resource_name, :url => confirm_path) do |form| %>
   <%= devise_error_messages! %>
   <div class="form-inputs">
-    <%= form.input :password, :input_html => {:autofocus => true} %>
+    <%= form.input :name, input_html: {:autofocus => true} %>
+    <%= form.input :password, :input_html %>
     <%= form.input :password_confirmation %>
     <%= form.input :confirmation_token, :as => :hidden, :input_html => { :value => @original_token } %>
   </div><!-- .form-inputs -->
