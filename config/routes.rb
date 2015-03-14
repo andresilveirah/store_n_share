@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :contents do
     post 'share', on: :member
+    get 'shared', on: :member
   end
 
   devise_for :users, controllers: { registrations: "users/registrations", confirmations: 'users/confirmations' }

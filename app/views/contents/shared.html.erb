@@ -1,0 +1,11 @@
+<h2>Content shared by <%= @content.user.name %></h2>
+
+<ul>
+  <% @content.attachments.each do |attachment| %>
+    <li><%= image_tag attachment.image.url, class: "thumbnail" %></li>
+  <% end %>
+</ul>
+
+<p><%= @content.url_html %></p>
+
+<%= link_to "My Library", contents_path, class: 'btn btn-link' %>

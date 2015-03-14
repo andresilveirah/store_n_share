@@ -37,7 +37,18 @@ class ContentsController < ApplicationController
   end
   
   def share
-    
+    friend = User.find_or_create_by(email: params[:share][:email])
+    friend.shared_contents << @content
+    redirect_to content_path(@content), notice: 'Content shared'
+  end
+  
+  def shared
+    @content = Content.find(params[:id])
+    if @content.shared_users.include?(current_user)
+      render
+    else
+      redirect_to root_path, error: "This content wasn't shared with you."
+    end
   end
 
   private

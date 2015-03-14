@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, if: :confirmed?
   
   has_many :contents
+  has_and_belongs_to_many :shared_contents, class_name: 'Content'
   
   def password_required?
     super if confirmed?
