@@ -37,9 +37,15 @@ class ContentsController < ApplicationController
   end
   
   def share
-    friend = User.find_or_create_by(email: params[:share][:email])
-    friend.shared_contents << @content
-    redirect_to content_path(@content), notice: 'Content shared'
+    email = params[:share][:email]
+    friend = User.where(email: email).first
+    if friend
+      friend.shared_contents << @content
+      redirect_to content_path(@content), notice: 'Content shared'
+    else
+      User.invite!(email: email)
+      redirect_to content_path(@content), notice: "An invitation was sent to #{email}"
+    end
   end
   
   def shared

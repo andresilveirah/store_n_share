@@ -7,3 +7,11 @@
     <li><%= link_to(image_tag(content.attachments.first.image.url(:thumb), class: "thumbnail"), content_path(content)) if content.attachments.any? %><%= link_to content.url_html, content_path(content) %></li>
   <% end %>
 </ul>
+
+<h1>Shared with me</h1>
+
+<ul>
+  <% current_user.shared_contents.each do |content| %>
+    <li><%= link_to(image_tag(content.attachments.first.image.url(:thumb), class: "thumbnail"), shared_content_path(content)) if content.attachments.any? %><%= link_to content.url_html, shared_content_path(content) %></li>
+  <% end %>
+</ul>
