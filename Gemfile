@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 
 gem 'devise'
+gem 'simple_form'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'will_paginate-bootstrap'
@@ -24,5 +25,5 @@ group :development do
   gem 'pry'
   gem 'spring'
   gem 'guard'
-  gem 'guard-rails'
+  gem 'guard-rspec', require: false
 end
