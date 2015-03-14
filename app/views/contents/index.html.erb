@@ -1,0 +1,9 @@
+<h1>My Library</h1>
+
+<%= link_to "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add Content".html_safe, new_content_path, class: 'btn btn-primary' %>
+
+<ul>
+  <% @contents.each do |content| %>
+    <li><%= link_to content.url, content_path(content) %></li>
+  <% end %>
+</ul>
