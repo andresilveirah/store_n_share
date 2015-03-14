@@ -1,3 +1,5 @@
+<%= link_to "Share", '#', class: 'btn btn-primary' %>
+
 <ul>
   <% @content.attachments.each do |attachment| %>
     <li><%= image_tag attachment.image.url, class: "thumbnail" %></li>

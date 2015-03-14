@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_content, only: [:show, :edit, :update, :destroy, :share]
 
   respond_to :html
   
@@ -34,6 +34,10 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     redirect_to root_path
+  end
+  
+  def share
+    
   end
 
   private
