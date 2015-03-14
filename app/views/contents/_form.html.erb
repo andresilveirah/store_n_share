@@ -1,8 +1,16 @@
-<%= simple_form_for(@content) do |f| %>
+<%= simple_nested_form_for(@content) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :url %>
+    
+    <p>or</p>
+    
+    <%= f.simple_fields_for :attachments do |attachment_form| %>
+      <%= attachment_form.file_field :image %>
+      <%= attachment_form.link_to_remove "Remove this image" %>
+    <% end %>
+    <p><%= f.link_to_add "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add an Image".html_safe, :attachments, class: 'btn btn-link'%></p>
   </div>
   
   <div class="form-actions">

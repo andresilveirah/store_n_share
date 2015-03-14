@@ -108,6 +108,7 @@ GEM
     multi_json (1.11.0)
     mysql2 (0.3.18)
     nenv (0.2.0)
+    nested_form (0.3.2)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  nested_form
   paperclip
   pry
   rails (= 4.1.0)

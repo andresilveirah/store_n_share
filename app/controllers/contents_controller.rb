@@ -42,6 +42,6 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:url)
+      params.require(:content).permit(:url, attachments_attributes: [:id, :image, :_destroy])
     end
 end

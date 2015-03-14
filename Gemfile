@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'will_paginate-bootstrap'
+gem 'nested_form'
 
 gem 'rspec-rails', '~> 3.0', group: [:development, :test]
 gem 'factory_girl_rails', group: [:development, :test]

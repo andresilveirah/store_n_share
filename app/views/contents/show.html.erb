@@ -1,3 +1,9 @@
+<ul>
+  <% @content.attachments.each do |attachment| %>
+    <li><%= image_tag attachment.image.url, class: "thumbnail" %></li>
+  <% end %>
+</ul>
+
 <p><%= @content.url %></p>
 
 <%= link_to "My Library", contents_path, class: 'btn btn-link' %>

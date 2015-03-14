@@ -4,6 +4,6 @@
 
 <ul>
   <% @contents.each do |content| %>
-    <li><%= link_to content.url, content_path(content) %></li>
+    <li><%= link_to(image_tag(content.attachments.first.image.url(:thumb), class: "thumbnail"), content_path(content)) if content.attachments.any? %><%= link_to content.url, content_path(content) %></li>
   <% end %>
 </ul>
