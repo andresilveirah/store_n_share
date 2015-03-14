@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314185514) do
+ActiveRecord::Schema.define(version: 20150314194227) do
 
   create_table "attachments", force: true do |t|
     t.integer  "content_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150314185514) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "url_html"
   end
 
   add_index "contents", ["user_id"], name: "index_contents_on_user_id", using: :btree
